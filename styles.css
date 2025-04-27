@@ -1,0 +1,197 @@
+:root {
+  --primary: #4361ee;
+  --secondary: #3f37c9;
+  --success: #4cc9f0;
+  --danger: #f72585;
+  --warning: #f8961e;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.calculator-container {
+  width: 100%;
+  max-width: 450px;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.calculator-header {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: var(--white);
+  padding: 25px;
+  text-align: center;
+}
+
+.calculator-header h2 {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.calculator-header p {
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.calculator-body {
+  padding: 25px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.input-group input:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+}
+
+.result-container {
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.bmi-value {
+  font-size: 48px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.bmi-category {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.bmi-scale {
+  margin-top: 20px;
+  position: relative;
+  height: 10px;
+  background: #e9ecef;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.bmi-indicator {
+  position: absolute;
+  height: 100%;
+  width: 20px;
+  background: var(--dark);
+  top: -15px;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  transition: left 1s ease-in-out;
+}
+
+.bmi-indicator::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--dark);
+  bottom: -10px;
+  left: 0;
+}
+
+.bmi-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.underweight {
+  background-color: rgba(248, 215, 218, 0.8);
+  color: var(--danger);
+}
+
+.normal {
+  background-color: rgba(212, 237, 218, 0.8);
+  color: #28a745;
+}
+
+.overweight {
+  background-color: rgba(255, 243, 205, 0.8);
+  color: #ffc107;
+}
+
+.obese {
+  background-color: rgba(248, 215, 218, 0.8);
+  color: var(--danger);
+}
+
+.error-message {
+  color: var(--danger);
+  font-size: 14px;
+  margin-top: 5px;
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
